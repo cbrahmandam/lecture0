@@ -1,0 +1,220 @@
+{
+  "_note": "ITC-HS 2022 duty rates. BCD = Basic Customs Duty %. IGST = Integrated GST %. SWS = Social Welfare Surcharge (10% of BCD). Source: CBIC Customs Tariff. Update periodically from https://www.cbic.gov.in/",
+  "_formula": "Assessable Value = CIF + 1% landing. BCD = AV * bcd_rate. SWS = BCD * 0.10. IGST = (AV + BCD + SWS) * igst_rate. Total = BCD + SWS + IGST",
+
+  "84": {
+    "description": "Nuclear reactors, boilers, machinery and mechanical appliances",
+    "default_bcd": 7.5,
+    "default_igst": 18,
+    "subcategories": {
+      "8471": {"description": "Automatic data processing machines (computers)", "bcd": 0.0, "igst": 18},
+      "84713010": {"description": "Laptops / notebooks", "bcd": 0.0, "igst": 18},
+      "84715000": {"description": "Processing units", "bcd": 0.0, "igst": 18},
+      "8473": {"description": "Computer parts and accessories", "bcd": 0.0, "igst": 18},
+      "8414": {"description": "Air or gas compressors, pumps, fans", "bcd": 7.5, "igst": 18},
+      "8415": {"description": "Air conditioning machines", "bcd": 20.0, "igst": 28},
+      "8418": {"description": "Refrigerators, freezers", "bcd": 20.0, "igst": 28},
+      "8450": {"description": "Washing machines", "bcd": 20.0, "igst": 28},
+      "8452": {"description": "Sewing machines", "bcd": 10.0, "igst": 12},
+      "8467": {"description": "Tools for working in hand, pneumatic or motor", "bcd": 7.5, "igst": 18},
+      "8481": {"description": "Taps, cocks, valves, pipe fittings", "bcd": 7.5, "igst": 18},
+      "8482": {"description": "Ball or roller bearings", "bcd": 7.5, "igst": 18},
+      "8483": {"description": "Shafts, gears, gear boxes", "bcd": 7.5, "igst": 18},
+      "8501": {"description": "Electric motors and generators", "bcd": 7.5, "igst": 18},
+      "8502": {"description": "Electric generating sets", "bcd": 7.5, "igst": 18},
+      "8504": {"description": "Electrical transformers", "bcd": 7.5, "igst": 18},
+      "8508": {"description": "Vacuum cleaners", "bcd": 20.0, "igst": 28},
+      "8516": {"description": "Electric water heaters, hair dryers, irons", "bcd": 20.0, "igst": 28},
+      "8525": {"description": "Transmission apparatus for radio-telephony", "bcd": 10.0, "igst": 18},
+      "8528": {"description": "Monitors, projectors, TV receivers", "bcd": 20.0, "igst": 28}
+    }
+  },
+  "85": {
+    "description": "Electrical machinery and equipment",
+    "default_bcd": 10.0,
+    "default_igst": 18,
+    "subcategories": {
+      "8517": {"description": "Telephone sets, smartphones", "bcd": 20.0, "igst": 18},
+      "851712": {"description": "Mobile phones / smartphones", "bcd": 20.0, "igst": 18},
+      "8518": {"description": "Microphones, loudspeakers, headphones", "bcd": 10.0, "igst": 18},
+      "8519": {"description": "Sound recording or reproducing apparatus", "bcd": 10.0, "igst": 18},
+      "8523": {"description": "Discs, tapes, USB drives for recording", "bcd": 10.0, "igst": 18},
+      "8536": {"description": "Switches, relays, fuses, plugs", "bcd": 7.5, "igst": 18},
+      "8541": {"description": "Semiconductor devices, LEDs", "bcd": 0.0, "igst": 18},
+      "8542": {"description": "Electronic integrated circuits", "bcd": 0.0, "igst": 18},
+      "8544": {"description": "Insulated wires, cables, optical fibre cables", "bcd": 7.5, "igst": 18}
+    }
+  },
+  "61": {
+    "description": "Articles of apparel and clothing accessories, knitted or crocheted",
+    "default_bcd": 20.0,
+    "default_igst": 12,
+    "subcategories": {
+      "6101": {"description": "Men's overcoats, windcheaters, knitted", "bcd": 20.0, "igst": 12},
+      "6102": {"description": "Women's overcoats, windcheaters, knitted", "bcd": 20.0, "igst": 12},
+      "6109": {"description": "T-shirts, singlets, knitted", "bcd": 20.0, "igst": 12},
+      "6110": {"description": "Jerseys, pullovers, sweatshirts, knitted", "bcd": 20.0, "igst": 12}
+    }
+  },
+  "62": {
+    "description": "Articles of apparel and clothing accessories, not knitted or crocheted",
+    "default_bcd": 20.0,
+    "default_igst": 12,
+    "subcategories": {
+      "6201": {"description": "Men's overcoats, windcheaters, woven", "bcd": 20.0, "igst": 12},
+      "6203": {"description": "Men's suits, ensembles, jackets, trousers", "bcd": 20.0, "igst": 12},
+      "6204": {"description": "Women's suits, ensembles, dresses", "bcd": 20.0, "igst": 12},
+      "6211": {"description": "Tracksuits, ski-suits, swimwear", "bcd": 20.0, "igst": 12}
+    }
+  },
+  "64": {
+    "description": "Footwear, gaiters and the like",
+    "default_bcd": 20.0,
+    "default_igst": 18,
+    "subcategories": {
+      "6401": {"description": "Waterproof footwear with rubber/plastic soles", "bcd": 20.0, "igst": 18},
+      "6403": {"description": "Footwear with leather uppers", "bcd": 20.0, "igst": 18},
+      "6404": {"description": "Footwear with textile uppers", "bcd": 20.0, "igst": 18},
+      "6405": {"description": "Other footwear", "bcd": 20.0, "igst": 18}
+    }
+  },
+  "39": {
+    "description": "Plastics and articles thereof",
+    "default_bcd": 7.5,
+    "default_igst": 18,
+    "subcategories": {
+      "3901": {"description": "Polymers of ethylene, in primary forms", "bcd": 7.5, "igst": 18},
+      "3902": {"description": "Polymers of propylene, in primary forms", "bcd": 7.5, "igst": 18},
+      "3920": {"description": "Other plates, sheets, film of plastics", "bcd": 7.5, "igst": 18},
+      "3924": {"description": "Tableware, kitchenware of plastics", "bcd": 10.0, "igst": 18},
+      "3926": {"description": "Other articles of plastics", "bcd": 10.0, "igst": 18}
+    }
+  },
+  "72": {
+    "description": "Iron and steel",
+    "default_bcd": 7.5,
+    "default_igst": 18,
+    "subcategories": {
+      "7208": {"description": "Flat-rolled products of iron/steel, hot-rolled", "bcd": 7.5, "igst": 18},
+      "7209": {"description": "Flat-rolled products of iron/steel, cold-rolled", "bcd": 7.5, "igst": 18},
+      "7210": {"description": "Flat-rolled products of iron/steel, coated", "bcd": 7.5, "igst": 18},
+      "7213": {"description": "Bars and rods, hot-rolled", "bcd": 7.5, "igst": 18},
+      "7217": {"description": "Wire of iron or non-alloy steel", "bcd": 7.5, "igst": 18}
+    }
+  },
+  "73": {
+    "description": "Articles of iron or steel",
+    "default_bcd": 7.5,
+    "default_igst": 18,
+    "subcategories": {
+      "7304": {"description": "Tubes, pipes and hollow profiles, seamless", "bcd": 7.5, "igst": 18},
+      "7306": {"description": "Other tubes, pipes and hollow profiles", "bcd": 7.5, "igst": 18},
+      "7318": {"description": "Screws, bolts, nuts, washers of iron/steel", "bcd": 7.5, "igst": 18},
+      "7323": {"description": "Household articles of iron/steel", "bcd": 20.0, "igst": 18}
+    }
+  },
+  "87": {
+    "description": "Vehicles other than railway rolling stock",
+    "default_bcd": 25.0,
+    "default_igst": 28,
+    "subcategories": {
+      "8703": {"description": "Motor cars and vehicles for passenger transport", "bcd": 100.0, "igst": 28},
+      "8711": {"description": "Motorcycles (incl. mopeds)", "bcd": 50.0, "igst": 28},
+      "8714": {"description": "Parts and accessories for motorcycles/cycles", "bcd": 15.0, "igst": 28},
+      "8708": {"description": "Parts and accessories for motor vehicles", "bcd": 15.0, "igst": 28}
+    }
+  },
+  "30": {
+    "description": "Pharmaceutical products",
+    "default_bcd": 10.0,
+    "default_igst": 12,
+    "subcategories": {
+      "3001": {"description": "Glands and organs; heparin", "bcd": 0.0, "igst": 12},
+      "3002": {"description": "Blood; antisera, vaccines", "bcd": 0.0, "igst": 5},
+      "3003": {"description": "Medicaments (mixed), not in measured doses", "bcd": 10.0, "igst": 12},
+      "3004": {"description": "Medicaments in measured doses (packaged)", "bcd": 10.0, "igst": 12},
+      "3005": {"description": "Wadding, gauze, bandages", "bcd": 0.0, "igst": 12}
+    }
+  },
+  "90": {
+    "description": "Optical, photographic, medical instruments",
+    "default_bcd": 7.5,
+    "default_igst": 18,
+    "subcategories": {
+      "9001": {"description": "Optical fibres, optical fibre bundles", "bcd": 0.0, "igst": 12},
+      "9004": {"description": "Spectacles, goggles", "bcd": 10.0, "igst": 18},
+      "9018": {"description": "Instruments for medical use", "bcd": 7.5, "igst": 12},
+      "9019": {"description": "Mechano-therapy appliances", "bcd": 7.5, "igst": 12},
+      "9021": {"description": "Orthopaedic appliances, artificial parts of body", "bcd": 0.0, "igst": 12},
+      "9027": {"description": "Instruments for physical/chemical analysis", "bcd": 7.5, "igst": 18},
+      "9032": {"description": "Automatic regulating/controlling instruments", "bcd": 7.5, "igst": 18}
+    }
+  },
+  "94": {
+    "description": "Furniture; bedding, mattresses; lamps",
+    "default_bcd": 20.0,
+    "default_igst": 18,
+    "subcategories": {
+      "9401": {"description": "Seats (chairs, stools)", "bcd": 20.0, "igst": 18},
+      "9403": {"description": "Other furniture", "bcd": 20.0, "igst": 18},
+      "9404": {"description": "Mattresses, sleeping bags", "bcd": 20.0, "igst": 18},
+      "9405": {"description": "Lamps and lighting fittings", "bcd": 20.0, "igst": 18}
+    }
+  },
+  "33": {
+    "description": "Essential oils, perfumes, cosmetics",
+    "default_bcd": 20.0,
+    "default_igst": 18,
+    "subcategories": {
+      "3301": {"description": "Essential oils", "bcd": 20.0, "igst": 18},
+      "3303": {"description": "Perfumes and toilet waters", "bcd": 20.0, "igst": 28},
+      "3304": {"description": "Beauty/make-up preparations", "bcd": 20.0, "igst": 18},
+      "3305": {"description": "Hair preparations", "bcd": 20.0, "igst": 18},
+      "3306": {"description": "Oral/dental hygiene preparations", "bcd": 20.0, "igst": 18}
+    }
+  },
+  "95": {
+    "description": "Toys, games and sports equipment",
+    "default_bcd": 20.0,
+    "default_igst": 18,
+    "subcategories": {
+      "9503": {"description": "Toys (tricycles, scooters, dolls, toy cars)", "bcd": 20.0, "igst": 18},
+      "9504": {"description": "Video game consoles, playing cards, billiards", "bcd": 20.0, "igst": 18},
+      "9506": {"description": "Sports equipment", "bcd": 20.0, "igst": 18}
+    }
+  },
+  "63": {
+    "description": "Textile made up articles; worn clothing",
+    "default_bcd": 20.0,
+    "default_igst": 12,
+    "subcategories": {
+      "6301": {"description": "Blankets and travelling rugs", "bcd": 20.0, "igst": 12},
+      "6302": {"description": "Bed linen, table linen, toilet/kitchen linen", "bcd": 20.0, "igst": 12},
+      "6304": {"description": "Other furnishing articles", "bcd": 20.0, "igst": 12}
+    }
+  },
+  "08": {
+    "description": "Edible fruit and nuts",
+    "default_bcd": 30.0,
+    "default_igst": 0,
+    "subcategories": {
+      "0801": {"description": "Coconuts, Brazil nuts, cashews", "bcd": 100.0, "igst": 5},
+      "0802": {"description": "Almonds, hazelnuts, walnuts, pistachios", "bcd": 100.0, "igst": 5},
+      "0803": {"description": "Bananas", "bcd": 30.0, "igst": 0},
+      "0804": {"description": "Dates, figs, mangoes, avocados", "bcd": 30.0, "igst": 0},
+      "0805": {"description": "Citrus fruit", "bcd": 30.0, "igst": 0},
+      "0806": {"description": "Grapes", "bcd": 30.0, "igst": 0},
+      "0808": {"description": "Apples, pears, quinces", "bcd": 50.0, "igst": 0}
+    }
+  },
+  "27": {
+    "description": "Mineral fuels, oils and products",
+    "default_bcd": 5.0,
+    "default_igst": 18,
+    "subcategories": {
+      "2709": {"description": "Petroleum oils, crude", "bcd": 0.0, "igst": 5},
+      "2710": {"description": "Petroleum oils, non-crude (petrol, diesel, ATF)", "bcd": 5.0, "igst": 18},
+      "2716": {"description": "Electrical energy", "bcd": 0.0, "igst": 0}
+    }
+  }
+}

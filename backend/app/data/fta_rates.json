@@ -1,0 +1,87 @@
+{
+  "_note": "Preferential duty rates under FTAs in force for India. Rates are BCD %. IGST remains same as MFN. Certificate of Origin required to claim benefit.",
+  "_ftas": {
+    "AIFTA": "ASEAN-India Free Trade Agreement. Countries: Brunei, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore, Thailand, Vietnam",
+    "INDIA_UAE_CEPA": "India-UAE Comprehensive Economic Partnership Agreement. In force since May 2022.",
+    "INDIA_JAPAN_CEPA": "India-Japan CEPA. In force since 2011.",
+    "INDIA_KOREA_CEPA": "India-Korea CEPA. In force since 2010.",
+    "SAFTA": "South Asian Free Trade Area. Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan, Maldives, Afghanistan."
+  },
+
+  "AIFTA": {
+    "_note": "ASEAN-India FTA rates for India imports. Most tariffs at 0% for Normal Track items.",
+    "84713010": {"bcd": 0.0, "note": "Laptops - NT1"},
+    "84715000": {"bcd": 0.0, "note": "Processing units - NT1"},
+    "8473": {"bcd": 0.0, "note": "Computer parts - NT1"},
+    "8517": {"bcd": 0.0, "note": "Mobile phones - NT1"},
+    "8541": {"bcd": 0.0, "note": "Semiconductor devices - NT1"},
+    "8542": {"bcd": 0.0, "note": "Integrated circuits - NT1"},
+    "8544": {"bcd": 0.0, "note": "Insulated wires and cables"},
+    "8501": {"bcd": 5.0, "note": "Electric motors - SL"},
+    "8504": {"bcd": 5.0, "note": "Transformers - SL"},
+    "6109": {"bcd": 12.0, "note": "T-shirts - ST"},
+    "6110": {"bcd": 12.0, "note": "Jerseys, pullovers - ST"},
+    "6203": {"bcd": 12.0, "note": "Men's suits - ST"},
+    "6204": {"bcd": 12.0, "note": "Women's suits - ST"},
+    "6401": {"bcd": 10.0, "note": "Waterproof footwear"},
+    "6403": {"bcd": 10.0, "note": "Leather footwear"},
+    "7208": {"bcd": 5.0, "note": "Hot-rolled steel flat products"},
+    "7209": {"bcd": 5.0, "note": "Cold-rolled steel flat products"},
+    "3901": {"bcd": 5.0, "note": "Polymers of ethylene"},
+    "3902": {"bcd": 5.0, "note": "Polymers of propylene"},
+    "9018": {"bcd": 0.0, "note": "Medical instruments - NT1"},
+    "9021": {"bcd": 0.0, "note": "Orthopaedic appliances - NT1"}
+  },
+
+  "INDIA_UAE_CEPA": {
+    "_note": "India-UAE CEPA preferential rates. Phased elimination over 10 years. Current applicable rates (Year 3).",
+    "8517": {"bcd": 16.0, "note": "Mobile phones - Phase reduction"},
+    "84713010": {"bcd": 0.0, "note": "Laptops - immediate elimination"},
+    "8473": {"bcd": 0.0, "note": "Computer parts - immediate elimination"},
+    "6109": {"bcd": 16.0, "note": "T-shirts - Phase reduction"},
+    "6203": {"bcd": 16.0, "note": "Men's suits - Phase reduction"},
+    "6403": {"bcd": 15.0, "note": "Leather footwear - Phase reduction"},
+    "9018": {"bcd": 0.0, "note": "Medical instruments - immediate elimination"},
+    "3303": {"bcd": 15.0, "note": "Perfumes - Phase reduction"},
+    "3304": {"bcd": 15.0, "note": "Cosmetics - Phase reduction"},
+    "7318": {"bcd": 5.0, "note": "Bolts, nuts - Phase reduction"},
+    "8536": {"bcd": 5.0, "note": "Electrical switches - Phase reduction"}
+  },
+
+  "INDIA_JAPAN_CEPA": {
+    "84713010": {"bcd": 0.0},
+    "8473": {"bcd": 0.0},
+    "8541": {"bcd": 0.0},
+    "8542": {"bcd": 0.0},
+    "9018": {"bcd": 0.0},
+    "9021": {"bcd": 0.0}
+  },
+
+  "INDIA_KOREA_CEPA": {
+    "84713010": {"bcd": 0.0},
+    "8473": {"bcd": 0.0},
+    "8541": {"bcd": 0.0},
+    "8542": {"bcd": 0.0},
+    "6109": {"bcd": 10.0},
+    "6203": {"bcd": 10.0},
+    "9018": {"bcd": 0.0}
+  },
+
+  "country_fta_map": {
+    "Thailand": "AIFTA",
+    "Vietnam": "AIFTA",
+    "Indonesia": "AIFTA",
+    "Malaysia": "AIFTA",
+    "Singapore": "AIFTA",
+    "Philippines": "AIFTA",
+    "Myanmar": "AIFTA",
+    "Cambodia": "AIFTA",
+    "Laos": "AIFTA",
+    "Brunei": "AIFTA",
+    "UAE": "INDIA_UAE_CEPA",
+    "United Arab Emirates": "INDIA_UAE_CEPA",
+    "Japan": "INDIA_JAPAN_CEPA",
+    "South Korea": "INDIA_KOREA_CEPA",
+    "Korea": "INDIA_KOREA_CEPA"
+  }
+}
