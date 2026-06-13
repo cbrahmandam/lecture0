@@ -463,6 +463,54 @@ function fieldSet(n, title, bodyHtml) {
   return `<div class="field-set"><div class="fs-head"><span class="n">${n}</span>${esc(title)}</div><div class="fs-body">${bodyHtml}</div></div>`;
 }
 
+/* Render the stored FHIR R4 record as a plain, readable record card —
+   pulls the items (name, age, address, token, diagnosis…) out of the
+   Patient / Encounter / Condition resources. No JSON on screen. */
+function fhirReadable(bundle) {
+  const resources = (bundle.entry || []).map((e) => e.resource);
+  const pat = resources.find((r) => r.resourceType === "Patient");
+  const enc = resources.find((r) => r.resourceType === "Encounter");
+  const con = resources.find((r) => r.resourceType === "Condition");
+  if (!pat) return `<span class="hint">No record.</span>`;
+
+  const ids = pat.identifier || [];
+  const mobile = (ids.find((i) => (i.system || "").includes("mobile")) || {}).value || "—";
+  const aadhaar = (ids.find((i) => i.type && i.type.text === "Aadhaar") || {}).value || "—";
+  const fullName = (pat.name && pat.name[0] && pat.name[0].text) || "—";
+  const ageExt = (pat.extension || []).find((e) => (e.url || "").includes("stated-age"));
+  const age = ageExt ? ageExt.valueString : "—";
+  const gender = pat.gender ? pat.gender.charAt(0).toUpperCase() + pat.gender.slice(1) : "—";
+  const address = (pat.address && pat.address[0] && pat.address[0].text) || "—";
+  const langCode = pat.communication && pat.communication[0] && pat.communication[0].language.coding[0].code;
+  const langName = I18N[langCode] ? I18N[langCode].label : (langCode || "—");
+
+  const patRows = [
+    ["Full name", fullName], ["Age", age], ["Gender", gender],
+    ["Mobile", mobile], ["Aadhaar", aadhaar], ["Address", address],
+    ["Preferred language", langName],
+  ];
+  let encRows = [];
+  if (enc) {
+    const token = (enc.identifier && enc.identifier[0] && enc.identifier[0].value) || "—";
+    const type = (enc.type && enc.type[0] && enc.type[0].text) || "—";
+    const when = enc.period && enc.period.start ? formatDate(enc.period.start) : "—";
+    encRows = [["Visit type", type], ["Token", token], ["Status", enc.status || "—"], ["Date", when]];
+  }
+  let conRows = [];
+  if (con) {
+    const dx = (con.code && con.code.text) || "—";
+    const ver = con.verificationStatus && con.verificationStatus.coding[0] && con.verificationStatus.coding[0].code;
+    conRows = [["Possible diagnosis", dx], ["Status", ver || "—"]];
+  }
+  const rowHtml = (list) => list.map(([k, v]) => `<div class="rec-row"><div class="rk">${esc(k)}</div><div class="rv">${esc(v)}</div></div>`).join("");
+
+  return `
+    <div class="rec-sub">Patient details</div>${rowHtml(patRows)}
+    ${enc ? `<div class="rec-sub">This visit</div>${rowHtml(encRows)}` : ""}
+    ${con ? `<div class="rec-sub">Provisional diagnosis</div>${rowHtml(conRows)}` : ""}
+    <div class="hint" style="margin-top:12px">Saved as a FHIR R4 record (Patient · Encounter · Condition).</div>`;
+}
+
 function doctorRecord() {
   const p = Store.getByMobile(state.selectedMobile);
   if (!p) { state.selectedMobile = null; return doctorList(); }
@@ -503,7 +551,8 @@ function doctorRecord() {
       <h2 style="margin-top:26px">Visit history</h2>
       <div class="field-set"><div class="fs-body" id="visits"></div></div>
 
-      <details class="fhir"><summary>FHIR R4 Bundle (latest visit) — preview</summary><pre class="json" id="fhir"></pre></details>
+      <h2 style="margin-top:26px">Patient record</h2>
+      <div class="field-set"><div class="fs-body" id="fhir"></div></div>
     </div>`);
 
   wrap.querySelector("#back").onclick = () => { state.selectedMobile = null; render(); };
@@ -524,7 +573,7 @@ function doctorRecord() {
   });
 
   const bundle = Store.toFhirBundle(p, latest || null);
-  wrap.querySelector("#fhir").textContent = JSON.stringify(bundle, null, 2);
+  wrap.querySelector("#fhir").innerHTML = fhirReadable(bundle);
   return wrap;
 }
 

@@ -167,10 +167,18 @@ textarea { min-height: 130px; resize: vertical; line-height: 1.5; }
 .visit:first-child { border-top: none; padding-top: 0; margin-top: 0; }
 .visit .vdate { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
 
-details.fhir { margin-top: 4px; }
-details.fhir summary { cursor: pointer; color: var(--blue-700); font-weight: 600; padding: 10px 0; }
-pre.json { background: #0b2740; color: #d6ecfb; padding: 16px; border-radius: 12px; overflow: auto;
-  font-size: 13px; line-height: 1.5; max-height: 360px; }
+/* Readable FHIR-backed record card */
+.rec-sub { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px;
+  color: var(--blue-500); margin: 16px 0 6px; }
+.rec-sub:first-child { margin-top: 0; }
+.rec-row { display: flex; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--blue-50); }
+.rec-row:last-child { border-bottom: none; }
+.rec-row .rk { flex: 0 0 170px; color: var(--muted); font-size: 14px; padding-top: 2px; }
+.rec-row .rv { flex: 1; font-size: 18px; font-weight: 600; color: var(--ink); word-break: break-word; }
+@media (max-width: 480px) {
+  .rec-row { flex-direction: column; gap: 2px; }
+  .rec-row .rk { flex-basis: auto; }
+}
 
 .empty { text-align: center; color: var(--muted); padding: 60px 20px; }
 .center { text-align: center; }
