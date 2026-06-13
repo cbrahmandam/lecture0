@@ -20,6 +20,26 @@ python3 -m http.server 8000
 
 Or open `app/index.html` directly (voice works best when served over http/https in Chrome).
 
+## Install on a phone/tablet (PWA — works offline)
+
+The app is a **Progressive Web App**: it installs to the home screen and runs
+**fully offline** with **local storage**, so no app store or APK build is needed.
+
+1. Serve `app/` over **HTTPS** (any static host — GitHub Pages, Netlify, an
+   internal server). A service worker requires `https://` (or `localhost`).
+2. Open the URL in **Chrome on Android** (or Safari on iOS).
+3. Chrome shows **"Add to Home screen" / Install**; tap it. iOS: Share → *Add to Home Screen*.
+4. Launch it from the home screen — it opens full-screen, no browser chrome, and
+   keeps working with no network. Patient data persists in the device's local storage.
+
+Files that make it installable: `manifest.webmanifest`, `sw.js` (offline cache),
+`icon-192.png` / `icon-512.png` (regenerate with `node make-icons.js`).
+
+> Want a real `.apk`? This installable PWA can be wrapped into one later with
+> [PWABuilder](https://www.pwabuilder.com/) or Bubblewrap (TWA) — both consume the
+> manifest above. A direct APK build wasn't possible in this hosted environment
+> because its network policy blocks Google's Android SDK servers.
+
 ## What's built
 
 ### Patient terminal (persona: Patient)
