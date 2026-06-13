@@ -20,6 +20,44 @@ python3 -m http.server 8000
 
 Or open `app/index.html` directly (voice works best when served over http/https in Chrome).
 
+## Deploy to Firebase Hosting (run on your laptop)
+
+The repo is preconfigured for **Firebase Hosting** (`firebase.json` serves the
+`app/` folder with PWA-correct cache headers). Creating the project and deploying
+require **your** Google login, so run these on your own machine:
+
+```bash
+# 1. Install the CLI (once)
+npm install -g firebase-tools
+
+# 2. Log in to your Google account (opens a browser)
+firebase login
+
+# 3. Create the Firebase project  (id must be globally unique — change if taken)
+firebase projects:create digital-history-taking --display-name "Digital History Taking"
+
+# 4. From the repo root, point this folder at that project
+cd lecture0
+firebase use digital-history-taking      # updates .firebaserc
+
+# 5. Deploy
+firebase deploy --only hosting
+```
+
+After deploy the CLI prints your live URL:
+
+```
+https://digital-history-taking.web.app        (and .firebaseapp.com)
+```
+
+Open it in **Chrome** → it's HTTPS, so the **Install** prompt and **voice input**
+both work, and it installs as the offline PWA above.
+
+> `.firebaserc` ships with `digital-history-taking` as the default project id.
+> If that id is taken, pick another in step 3 and re-run `firebase use <your-id>`.
+> Hosting only for now — Firestore/Auth (to replace the local-storage prototype)
+> is a later step.
+
 ## Install on a phone/tablet (PWA — works offline)
 
 The app is a **Progressive Web App**: it installs to the home screen and runs
