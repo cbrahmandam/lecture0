@@ -34,11 +34,11 @@ npm install -g firebase-tools
 firebase login
 
 # 3. Create the Firebase project  (id must be globally unique — change if taken)
-firebase projects:create digital-history-taking --display-name "Digital History Taking"
+firebase projects:create sriclinichistory --display-name "SriClinicHistory"
 
 # 4. From the repo root, point this folder at that project
 cd lecture0
-firebase use digital-history-taking      # updates .firebaserc
+firebase use sriclinichistory      # updates .firebaserc
 
 # 5. Deploy
 firebase deploy --only hosting
@@ -47,13 +47,13 @@ firebase deploy --only hosting
 After deploy the CLI prints your live URL:
 
 ```
-https://digital-history-taking.web.app        (and .firebaseapp.com)
+https://sriclinichistory.web.app        (and .firebaseapp.com)
 ```
 
 Open it in **Chrome** → it's HTTPS, so the **Install** prompt and **voice input**
 both work, and it installs as the offline PWA above.
 
-> `.firebaserc` ships with `digital-history-taking` as the default project id.
+> `.firebaserc` ships with `sriclinichistory` as the default project id.
 > If that id is taken, pick another in step 3 and re-run `firebase use <your-id>`.
 > Hosting only for now — Firestore/Auth (to replace the local-storage prototype)
 > is a later step.
